@@ -28,8 +28,8 @@ console.log("+++++++++++++++" + app.get('port'));
 
   
   app.get("*", (req, res) => { //our GET route needs to point to the index.html in our build
-      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-    });
+    res.sendFile(path.resolve(new URL(import.meta.url).pathname, '..', "client", "build", "index.html"));
+  });
 
     app.listen(app.get('port'), function () {
       console.log('Express server listening on port ' + app.get('port'));
