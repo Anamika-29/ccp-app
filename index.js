@@ -5,6 +5,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import statusMonitor from 'express-status-monitor';
 import Route from './routes/Routes.mjs';
+ const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 import('./database/db.js').then((module) => {
   const Connection = module.default;
@@ -28,7 +30,8 @@ console.log("+++++++++++++++" + app.get('port'));
 
   
   app.get("*", (req, res) => { //our GET route needs to point to the index.html in our build
-    res.sendFile(path.resolve(new URL(import.meta.url).pathname, '..', "client", "build", "index.html"));
+          res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+
   });
 
     app.listen(app.get('port'), function () {
