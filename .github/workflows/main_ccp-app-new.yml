@@ -53,4 +53,4 @@ jobs:
           app-name: 'ccp-app-new'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_973B884EE88B4AFF8F5084C8077DE44E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D82553BDCD08461B813B6193B23BD01D }}
